@@ -1,50 +1,43 @@
-﻿using System;
+using System;
 using System.Security.Cryptography;
 
-namespace hashing
+namespace Hashing
 {
     class PBKDF2
     {
-        public static string Hash(string password, int iterations = 10000)
+        public static string Hash(string Password, int Iterations = 10000, int Length = 20)
         {
             //create salt of 16 byte's
-            byte[] salt;
-            new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+            byte[] Salt = new byte[16];
+            new RNGCryptoServiceProvider().GetBytes(Salt);
 
             //create hash of 20 byte's
-            var pbkdf2 = new Rfc2898DeriveBytes(password, salt, iterations);
-            var hash = pbkdf2.GetBytes(20);
+            byte[] Hash = new Rfc2898DeriveBytes(Password, Salt, Iterations).GetBytes(Length);
 
             //combine salt and hash
-            var hashBytes = new byte[36];
-            Array.Copy(salt, 0, hashBytes, 0, 16);
-            Array.Copy(hash, 0, hashBytes, 16, 20);
+            var CombinedBytes = new byte[16+Length];
+            Array.Copy(Salt, 0, CombinedBytes, 0, 16);
+            Array.Copy(Hash, 0, CombinedBytes, 16, Length);
 
             //return string
-            return Convert.ToBase64String(hashBytes);
+            return Convert.ToBase64String(CombinedBytes);
         }
 
-        public static bool Verify(string password, string hashedPassword)
+        public static bool Verify(string Password, string HashedPassword, int Iterations = 10000, int Length = 20)
         {
             //convert to byte's
-            byte[] hashBytes = Convert.FromBase64String(hashedPassword);
+            byte[] HashedBytes = Convert.FromBase64String(HashedPassword);
 
             //get the salt from byte's
-            byte[] salt = new byte[16];
-            Array.Copy(hashBytes, 0, salt, 0, 16);
-            
+            byte[] Salt = new byte[16];
+            Array.Copy(HashedBytes, 0, Salt, 0, 16);
+
             //generate hash of password, to compare it with hashedPassword
-            var pbkdf2 = new Rfc2898DeriveBytes(password, salt, 10000);
-            byte[] hash = pbkdf2.GetBytes(20);
-            
+            byte[] hash = new Rfc2898DeriveBytes(Password, Salt, 10000).GetBytes(Length);
+
             //compare the result's
             for (int i = 0; i < 20; i++)
-            {
-                if (hashBytes[i + 16] != hash[i])
-                {
-                    return false;
-                }
-            }
+                if (HashedBytes[i + 16] != hash[i]) return false;
             return true;
         }
     }

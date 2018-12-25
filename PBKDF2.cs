@@ -27,7 +27,7 @@ namespace Hashing
             byte[] Hash = new Rfc2898DeriveBytes(Password, Salt, Iterations).GetBytes(Length);
 
             //combine salt and hash
-            var CombinedBytes = new byte[16 + Length];
+            byte[] CombinedBytes = new byte[16 + Length];
             Buffer.BlockCopy(Salt, 0, CombinedBytes, 0, 16);
             Buffer.BlockCopy(Hash, 0, CombinedBytes, 16, Length);
 
@@ -45,11 +45,11 @@ namespace Hashing
             Buffer.BlockCopy(HashedBytes, 0, Salt, 0, 16);
 
             //generate hash of password, to compare it with hashedPassword
-            byte[] hash = new Rfc2898DeriveBytes(Password, Salt, 10000).GetBytes(Length);
+            byte[] Hash = new Rfc2898DeriveBytes(Password, Salt, 10000).GetBytes(Length);
 
             //compare the result's
-            for (int i = 0; i < 20; i++)
-                if (HashedBytes[i + 16] != hash[i]) return false;
+            for (int i = 0; i < Length; i++)
+                if (HashedBytes[i + 16] != Hash[i]) return false;
             return true;
         }
     }

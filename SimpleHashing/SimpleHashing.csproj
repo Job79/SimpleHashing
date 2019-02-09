@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Library that makes hashing simple, and easy.</Description>
+    <Company>HenkSharp</Company>
+    <Authors>Henkje</Authors>
+    <Copyright>Copyright (C) 2019 henkje</Copyright>
+    <PackageLicenseUrl>https://github.com/GHenkje/SimpleHashing/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/GHenkje/SimpleHashing</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/GHenkje/SimpleHashing</RepositoryUrl>
+    <PackageTags>Hashing, PBKDF2, Rfc2898DeriveBytes</PackageTags>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>EasyHashing.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+
+</Project>

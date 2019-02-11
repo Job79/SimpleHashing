@@ -1,4 +1,4 @@
-﻿/* PBKDF2
+﻿/* SimpleHashing
  * Copyright (C) 2019  henkje (henkje@pm.me)
  * 
  * MIT license
@@ -21,7 +21,7 @@ namespace SimpleHashing
         const int DEFAULT_LENGTH = 32;
 
         /// <summary>
-        /// Hash input with PBKDF2.
+        /// Hash a string with PBKDF2.
         /// </summary>
         /// <param name="Input">String to hash</param>
         /// <param name="Iterations">Rounds PBKDF2 will make to genarete the hash</param>
@@ -50,7 +50,7 @@ namespace SimpleHashing
         }
 
         /// <summary>
-        /// Hashi input with PBKDF2.
+        /// Hash a byte[] with PBKDF2.
         /// </summary>
         /// <param name="Input">Byte[] to hash</param>
         /// <param name="Iterations">Rounds PBKDF2 will make to genarete the hash</param>
@@ -84,7 +84,7 @@ namespace SimpleHashing
         /// <param name="HashedInput">Hashed string</param>
         /// <param name="Input">String to compare with HashedInput</param>
         /// <param name="Iterations">Rounds PBKDF2 made to generate HashedInput</param>
-        /// <returns>boolean, HashedInput is the same as Input</returns>
+        /// <returns>boolean, true if HashedInput is the same as Input</returns>
         public static bool Verify(string HashedInput, string Input, int Iterations = DEFAULT_ITERATIONS)
         {
             if (string.IsNullOrEmpty(Input)) throw new Exception("Could not hash input: HashedInput is empty.");
@@ -118,7 +118,7 @@ namespace SimpleHashing
         /// <param name="HashedInput">Hashed string</param>
         /// <param name="Input">String to compare with HashedInput</param>
         /// <param name="Iterations">Rounds PBKDF2 made to generate HashedInput</param>
-        /// <returns>boolean, HashedInput is the same as Input</returns>
+        /// <returns>boolean, true if HashedInput is the same as Input</returns>
         public static bool Verify(byte[] HashedInput, byte[] Input, int Iterations = DEFAULT_ITERATIONS)
         {
             if (HashedInput == null) throw new Exception("Could not hash input: HashedInput is empty.");

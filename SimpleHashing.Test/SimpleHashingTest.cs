@@ -1,4 +1,4 @@
-/* PBKDF2
+/* SimpleHashing
  * Copyright (C) 2019  henkje (henkje@pm.me)
  * 
  * MIT license
@@ -16,7 +16,7 @@ using System.Text;
 namespace SimpleHashing.Test
 {
     [TestClass]
-    public class UnitTest1
+    public class SimpleHashingTest
     {
         [TestMethod]
         public void TestString()

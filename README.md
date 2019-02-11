@@ -4,8 +4,7 @@ SimpleHashing made hashing easy.
 
 # Security
 SimpleHashing use a random generated salt of 16 bytes.
-A random salt helps you to protect from rainbow tables.
-Because there are no rainbowtables for every salt, this will result in a giant table.
+A random salt protect you for rainbowtables.
 To prevent from bruteforce attacks, you can change the Iterations value.
-Higher Iterations will change the time to create a hash.(Default = 50000)
+Higher Iterations will change the time to create a hash.(Default = 50000)(Higher takes more time)
 

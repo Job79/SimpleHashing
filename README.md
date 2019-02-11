@@ -1,41 +1,11 @@
-# PBKDF2
-PBKDF2 class for hashing strings with random generated salt. 
+# SimpleHashing
+SimpleHashing is a library made on top of System.Security.Cryptography.Rfc2898DeriveBytes.
+SimpleHashing made hashing easy.
 
-# How do i use this class?
+# Security
+SimpleHashing use a random generated salt of 16 bytes.
+A random salt helps you to protect from rainbow tables.
+Because there are no rainbowtables for every salt, this will result in a giant table.
+To prevent from bruteforce attacks, you can change the Iterations value.
+Higher Iterations will change the time to create a hash.(Default = 50000)
 
-Download the PBKDF2 class.
-Now open your project and go to solution explorer.
-Right click on your project>Add>Existing item. 
-Now select the class and it will be inported. Dont forget to include the namespace wich is named "Hashing".
-
-This example will explain how to use the class:
-```cs
-using System;
-using Hashing;//import PBKDF2 namespace
-
-namespace example
-{
-    class Program
-    {
-        static void Main()
-        {
-            string Input = "12345";//input string
-            string Hash = PBKDF2.Hash(Input);//generate hash of input
-            Console.WriteLine(Hash);//display output
-
-            bool Equals = PBKDF2.Verify(Input,Hash);//check hash with input
-            Console.WriteLine(Equals);//output: true
-
-            string Input2 = "12345";//input string
-            string Hash2 = PBKDF2.Hash(Input2,10000,5);//generate hash with 10000 iterations, and a length of 5 bytes.
-            //but because the iv is saved at the first 16 bytes, the output will be 21(16+5) bytes long.
-            Console.WriteLine(Hash2);//display hash
-
-            bool Equals2 = PBKDF2.Verify(Input2, Hash2, 10000, 5);//check hash with input
-            Console.WriteLine(Equals2);//output: true
-        }
-    }
-}
-
-
-```

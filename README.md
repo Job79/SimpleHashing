@@ -1,6 +1,6 @@
 # SimpleHashing
-SimpleHashing is a library made on top of System.Security.Cryptography.Rfc2898DeriveBytes.
-SimpleHashing made hashing easy.
+SimpleHashing is a library made on top of `System.Security.Cryptography.Rfc2898DeriveBytes`.
+SimpleHashing makes hashing easy.
 
 # Security
 SimpleHashing use a random generated salt of 16 bytes.

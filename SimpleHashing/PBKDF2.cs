@@ -29,15 +29,15 @@ namespace SimpleHashing
         /// <returns>The generated salt+hash</returns>
         public static string Hash(string Input, int Iterations = DEFAULT_ITERATIONS, int Length = DEFAULT_LENGTH)
         {
-            if (string.IsNullOrEmpty(Input)) throw new Exception("Could not hash input: Input is empty.");
-            else if (Iterations <= 0) throw new Exception("Could not hash input: Iterations can't be negative or null.");
-            else if (Length <= 0) throw new Exception("Could not hash input: Length can't be negative or null.");
+            if (string.IsNullOrEmpty(Input)) throw new ArgumentException("Could not hash input: Input is empty.");
+            else if (Iterations <= 0) throw new ArgumentOutOfRangeException("Could not hash input: Iterations can't be negative or 0.");
+            else if (Length <= 0) throw new ArgumentOutOfRangeException("Could not hash input: Length can't be negative or 0.");
 
             //Create salt of 16 byte's.
             byte[] Salt = new byte[16];
             new RNGCryptoServiceProvider().GetBytes(Salt);
 
-            //Create hash of 20 byte's.
+            //Create hash of (Length) byte's.
             byte[] Hash = new Rfc2898DeriveBytes(Input, Salt, Iterations).GetBytes(Length);
 
             //Combine salt and hash.
@@ -58,9 +58,9 @@ namespace SimpleHashing
         /// <returns>The generated salt+hash</returns>
         public static byte[] Hash(byte[] Input, int Iterations = DEFAULT_ITERATIONS, int Length = DEFAULT_LENGTH)
         {
-            if (Input == null) throw new Exception("Could not hash input: Input is null.");
-            else if (Iterations <= 0) throw new Exception("Could not hash input: Iterations can't be negative or null.");
-            else if (Length <= 0) throw new Exception("Could not hash input: Length can't be negative or null.");
+            if (Input == null) throw new ArgumentNullException("Could not hash input: Input is null.");
+            else if (Iterations <= 0) throw new ArgumentOutOfRangeException("Could not hash input: Iterations can't be negative or 0.");
+            else if (Length <= 0) throw new ArgumentOutOfRangeException("Could not hash input: Length can't be negative or 0.");
 
             //Create salt of 16 byte's.
             byte[] Salt = new byte[16];
@@ -87,9 +87,9 @@ namespace SimpleHashing
         /// <returns>boolean, true if HashedInput is the same as Input</returns>
         public static bool Verify(string HashedInput, string Input, int Iterations = DEFAULT_ITERATIONS)
         {
-            if (string.IsNullOrEmpty(Input)) throw new Exception("Could not hash input: HashedInput is empty.");
-            else if (string.IsNullOrEmpty(Input)) throw new Exception("Could not hash input: Input is empty.");
-            else if (Iterations <= 0) throw new Exception("Could not hash input: Iterations can't be negative or null.");
+            if (string.IsNullOrEmpty(Input)) throw new ArgumentException("Could not hash input: HashedInput is empty.");
+            else if (string.IsNullOrEmpty(Input)) throw new ArgumentException("Could not hash input: Input is empty.");
+            else if (Iterations <= 0) throw new ArgumentOutOfRangeException("Could not hash input: Iterations can't be negative or null.");
 
             //Get byte's from HashedInput.
             byte[] HashedBytes = Convert.FromBase64String(HashedInput);
@@ -121,9 +121,9 @@ namespace SimpleHashing
         /// <returns>boolean, true if HashedInput is the same as Input</returns>
         public static bool Verify(byte[] HashedInput, byte[] Input, int Iterations = DEFAULT_ITERATIONS)
         {
-            if (HashedInput == null) throw new Exception("Could not hash input: HashedInput is empty.");
-            else if (Input == null) throw new Exception("Could not hash input: Input is empty.");
-            else if (Iterations <= 0) throw new Exception("Could not hash input: Iterations can't be negative or null.");
+            if (HashedInput == null) throw new ArgumentException("Could not hash input: HashedInput is empty.");
+            else if (Input == null) throw new ArgumentException("Could not hash input: Input is empty.");
+            else if (Iterations <= 0) throw new ArgumentOutOfRangeException("Could not hash input: Iterations can't be negative or null.");
 
             //Get byte's from HashedInput.
             byte[] HashedBytes = HashedInput;

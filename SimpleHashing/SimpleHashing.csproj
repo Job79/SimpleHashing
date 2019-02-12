@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
@@ -10,11 +10,12 @@
     <PackageLicenseUrl>https://github.com/GHenkje/SimpleHashing/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/GHenkje/SimpleHashing</PackageProjectUrl>
     <RepositoryUrl>https://github.com/GHenkje/SimpleHashing</RepositoryUrl>
-    <PackageTags>Hashing, PBKDF2, Rfc2898DeriveBytes, hash, EasyHashing, protection, Security</PackageTags>
+    <PackageTags>Hashing, PBKDF2, Rfc2898DeriveBytes, Hash, EasyHashing, Protection, Security</PackageTags>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>EasyHashing.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>SimpleHashing.snk</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
-    <Version>1.0.1</Version>
+    <Version>1.0.1.1</Version>
+    <PackageReleaseNotes>- Changed exeptions</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>

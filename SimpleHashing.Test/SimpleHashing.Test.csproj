@@ -13,9 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="SimpleHashing">
-      <HintPath>..\SimpleHashing\bin\Debug\netcoreapp2.1\SimpleHashing.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\SimpleHashing\SimpleHashing.csproj" />
   </ItemGroup>
 
 </Project>

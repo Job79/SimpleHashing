@@ -79,7 +79,7 @@ namespace SimpleHashing
         }
 
         /// <summary>
-        /// Verify hashed string with another string.
+        /// Compare hashed string with another string.
         /// </summary>
         /// <param name="HashedInput">Hashed string</param>
         /// <param name="Input">String to compare with HashedInput</param>
@@ -113,7 +113,7 @@ namespace SimpleHashing
         }
 
         /// <summary>
-        /// Verify hashed byte[] with another byte[].
+        /// Compare hashed byte[] with another byte[].
         /// </summary>
         /// <param name="HashedInput">Hashed string</param>
         /// <param name="Input">String to compare with HashedInput</param>

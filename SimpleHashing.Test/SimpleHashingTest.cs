@@ -1,7 +1,16 @@
-/* SimpleHashing
- * Copyright (C) 2019  henkje (henkje@pm.me)
+/* SimpleHashing.Test
  * 
- * MIT license
+ * Copyright (c) 2019 henkje
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -21,34 +30,34 @@ namespace SimpleHashing.Test
         [TestMethod]
         public void TestString()
         {
-            const string Input = "12345";
-            string Hash1 = PBKDF2.Hash(Input);
-            bool Hash1Equals = PBKDF2.Verify(Hash1, Input);
+            const string input = "12345";
+            string hash1 = PBKDF2.Hash(input);
+            bool hash1Equals = PBKDF2.Verify(hash1, input);
 
-            string Hash2 = PBKDF2.Hash(Input, 100);
-            bool Hash2Equals = PBKDF2.Verify(Hash2, Input, 100);
+            string hash2 = PBKDF2.Hash(input, 100);
+            bool hash2Equals = PBKDF2.Verify(hash2, input, 100);
 
-            string Hash3 = PBKDF2.Hash(Input, Length: 60);
-            bool Hash3Equals = PBKDF2.Verify(Hash3, Input);
+            string hash3 = PBKDF2.Hash(input, length: 60);
+            bool hash3Equals = PBKDF2.Verify(hash3, input);
 
-            Assert.IsTrue(Hash1Equals&&Hash2Equals&&Hash3Equals);
+            Assert.IsTrue(hash1Equals&&hash2Equals&&hash3Equals);
         }
 
         [TestMethod]
         public void TestByte()
         {
-            byte[] Input = Encoding.UTF8.GetBytes("12345");
+            byte[] input = Encoding.UTF8.GetBytes("12345");
 
-            byte[] Hash1 = PBKDF2.Hash(Input);
-            bool Hash1Equals = PBKDF2.Verify(Hash1, Input);
+            byte[] hash1 = PBKDF2.Hash(input);
+            bool hash1Equals = PBKDF2.Verify(hash1, input);
 
-            byte[] Hash2 = PBKDF2.Hash(Input, 100);
-            bool Hash2Equals = PBKDF2.Verify(Hash2, Input, 100);
+            byte[] hash2 = PBKDF2.Hash(input, 100);
+            bool hash2Equals = PBKDF2.Verify(hash2, input, 100);
 
-            byte[] Hash3 = PBKDF2.Hash(Input, Length: 60);
-            bool Hash3Equals = PBKDF2.Verify(Hash3, Input);
+            byte[] hash3 = PBKDF2.Hash(input, length: 60);
+            bool hash3Equals = PBKDF2.Verify(hash3, input);
 
-            Assert.IsTrue(Hash1Equals && Hash2Equals && Hash3Equals);
+            Assert.IsTrue(hash1Equals && hash2Equals && hash3Equals);
         }
     }
 }

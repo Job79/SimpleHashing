@@ -3,18 +3,27 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>SimpleHashing</PackageId>
-    <Version>1.0.2.0</Version>
-    <Description>Library that makes hashing with PBKDF2 simple and easy.
-SimpleHashing has a good documentation.</Description>
+    <Version>1.0.3.1</Version>
+    <Description>Library that makes hashing with PBKDF2 simple and easy.</Description>
     <Authors>Henkje</Authors>
     <Company>HenkSharp</Company>
     <Copyright>Copyright (C) 2019 Henkje</Copyright>
-    <PackageLicenseUrl>https://github.com/GHenkje/SimpleHashing/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/GHenkje/SimpleHashing</PackageProjectUrl>
     <RepositoryUrl>https://github.com/GHenkje/SimpleHashing</RepositoryUrl>
     <PackageTags>Hashing, PBKDF2, Rfc2898DeriveBytes, Hash, EasyHashing, Protection, Security</PackageTags>
     <PackageReleaseNotes>- Moved to .net standard</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <AssemblyVersion>1.0.3.1</AssemblyVersion>
+    <FileVersion>1.0.3.1</FileVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

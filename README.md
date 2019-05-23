@@ -1,5 +1,5 @@
 <p align="center">
-  <b>SimplHashing</b>
+  <b>SimpleHashing</b>
   <br/>
   <img src="https://img.shields.io/badge/License-MIT-green.svg">
   <img src="https://img.shields.io/badge/version-1.0.3.1-green.svg">

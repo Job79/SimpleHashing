@@ -9,6 +9,14 @@
   <a>Library that makes hashing with PBKDF2 simple and easy.<a/>
   <br/><br/>
 </p>
+  
+  ```cs
+  string hash = PBKDF2.Hash("12345");
+  byte[] hash2 = PBKDF2.Hash(Encoding.UTF8.GetBytes("12345"));
+  
+  bool PBKDF2.Verify(hash,"12345");//true
+  bool PBKDF2.Verify(hash,Encoding.UTF8.GetBytes("421"));//false
+  ```
 
 # Security
 SimpleHashing is a library made on top of `System.Security.Cryptography.Rfc2898DeriveBytes` and uses a secure random 16 byte salt.

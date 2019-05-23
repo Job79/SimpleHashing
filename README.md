@@ -1,5 +1,5 @@
 <p align="center">
-  <b>EasyTcp</b>
+  <b>SimplHashing</b>
   <br/>
   <img src="https://img.shields.io/badge/License-MIT-green.svg">
   <img src="https://img.shields.io/badge/version-2.0.4.1-green.svg">
@@ -12,5 +12,5 @@
 
 # Security
 SimpleHashing is a library made on top of `System.Security.Cryptography.Rfc2898DeriveBytes` and uses a secure random 16 byte salt.
-PBKDF2 isn't the best algorithm for password hashing(but the best one avaible in the c# System.Securety namespace), but is still an good hashing algorithm. (with many iterations)
+PBKDF2 isn't the best algorithm for password hashing(but the best one avaible in the c# System.Securety namespace), but is still an good hashing algorithm. (Only with many iterations)
 Take a look at scrypt for password hashing.

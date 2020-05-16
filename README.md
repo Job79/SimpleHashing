@@ -20,7 +20,7 @@
 
 # Security
 SimpleHashing is a library made on top of `System.Security.Cryptography.Rfc2898DeriveBytes` and uses a secure random 16 byte salt.
-PBKDF2 isn't the best algorithm for password hashing(but the best one avaible in the c# System.Securety namespace), but is still an good hashing algorithm. (Only with many iterations)
-Take a look at scrypt for password hashing.
+PBKDF2 isn't the best algorithm for password hashing(but the best one avaible in the c# System.Securety namespace), but is still a good hashing algorithm. (With many iterations)
+Take a look at scrypt or argon2 for password hashing.
 
-# [Documentation](https://github.com/GHenkje/SimpleHashing/wiki)
+# [Documentation](https://github.com/Job79/SimpleHashing/wiki)

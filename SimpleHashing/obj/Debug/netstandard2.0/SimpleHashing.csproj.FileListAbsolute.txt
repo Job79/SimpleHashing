@@ -1,0 +1,8 @@
+/home/job/SimpleHashing/SimpleHashing/bin/Debug/netstandard2.0/SimpleHashing.deps.json
+/home/job/SimpleHashing/SimpleHashing/bin/Debug/netstandard2.0/SimpleHashing.dll
+/home/job/SimpleHashing/SimpleHashing/bin/Debug/netstandard2.0/SimpleHashing.pdb
+/home/job/SimpleHashing/SimpleHashing/obj/Debug/netstandard2.0/SimpleHashing.csprojAssemblyReference.cache
+/home/job/SimpleHashing/SimpleHashing/obj/Debug/netstandard2.0/SimpleHashing.AssemblyInfoInputs.cache
+/home/job/SimpleHashing/SimpleHashing/obj/Debug/netstandard2.0/SimpleHashing.AssemblyInfo.cs
+/home/job/SimpleHashing/SimpleHashing/obj/Debug/netstandard2.0/SimpleHashing.dll
+/home/job/SimpleHashing/SimpleHashing/obj/Debug/netstandard2.0/SimpleHashing.pdb

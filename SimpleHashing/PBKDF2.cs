@@ -31,7 +31,7 @@ namespace SimpleHashing
             salt ??= GenerateRandomSalt(SaltLength);
 
             // Create hash of [length] bytes.
-            var rfc = new Rfc2898DeriveBytes(input, salt, iterations);
+            using var rfc = new Rfc2898DeriveBytes(input, salt, iterations);
             var hash = rfc.GetBytes(length);
 
             // Combine salt and hash.
